@@ -1,0 +1,36 @@
+{
+  "name": "nexus-ai",
+  "version": "15.0.0",
+  "private": true,
+  "description": "Local-first AI workspace: chat with edit/regenerate/stop, live information providers, agent workspace, website builder and reviewed memory",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check": "node scripts/check.js",
+    "test": "node --test",
+    "migrate:v4": "node scripts/migrate-v4.js",
+    "migrate:v5": "node scripts/migrate-v5.js",
+    "migrate:v6": "node scripts/migrate-v6.js",
+    "migrate:v7": "node scripts/migrate-v7.js",
+    "benchmark": "node scripts/benchmark.js",
+    "db:check": "node scripts/db-check.js",
+    "db:setup:help": "node scripts/db-setup-help.js",
+    "intelligence:check": "node scripts/intelligence-check.js",
+    "ui:check": "node scripts/ui/ui-browser-check.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.3",
+    "express-rate-limit": "^7.5.1",
+    "helmet": "^8.3.0",
+    "mammoth": "^1.13.0",
+    "multer": "^2.5.0",
+    "mysql2": "^3.24.6",
+    "pdf-parse": "^1.1.4"
+  }
+}

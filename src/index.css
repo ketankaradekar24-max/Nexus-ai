@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@import "katex/dist/katex.min.css";
+@import "highlight.js/styles/github-dark.min.css";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Subtle custom scrollbars for dark & light workspaces */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+/* Markdown prose polish */
+.sub-prose {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.sub-prose p + p {
+  margin-top: 0.75rem;
+}
+
+.sub-prose ul, .sub-prose ol {
+  margin: 0.625rem 0;
+  padding-left: 1.375rem;
+}
+
+.sub-prose ul {
+  list-style-type: disc;
+}
+
+.sub-prose ol {
+  list-style-type: decimal;
+}
+
+.sub-prose li + li {
+  margin-top: 0.25rem;
+}
+
+.sub-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.875rem 0;
+  font-size: 0.875rem;
+}
+
+.sub-prose th,
+.sub-prose td {
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.sub-prose th {
+  font-weight: 600;
+  background: rgba(148, 163, 184, 0.08);
+}
+
+.sub-prose blockquote {
+  border: 1px solid rgba(212, 180, 131, 0.28);
+  background: rgba(212, 180, 131, 0.05);
+  border-radius: 0.5rem;
+  padding: 0.625rem 0.875rem;
+  margin: 0.75rem 0;
+}
+
+.sub-prose h1, .sub-prose h2, .sub-prose h3 {
+  font-weight: 600;
+  margin-top: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.sub-prose h1 { font-size: 1.25rem; }
+.sub-prose h2 { font-size: 1.125rem; }
+.sub-prose h3 { font-size: 1rem; }
